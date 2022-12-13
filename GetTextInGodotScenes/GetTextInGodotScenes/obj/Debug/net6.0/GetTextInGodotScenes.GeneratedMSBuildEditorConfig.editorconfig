@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GetTextInGodotScenes
-build_property.ProjectDir = C:\_PROJETOS_\_TEST_\GetTextInGodotScenes\GetTextInGodotScenes\
+build_property.ProjectDir = C:\_PROJETOS_\godot-utilities\GetTextInGodotScenes\GetTextInGodotScenes\

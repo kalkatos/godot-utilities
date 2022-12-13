@@ -9,6 +9,7 @@ while (true)
 	string folder = Console.ReadLine() ?? "";
 	Console.Write("Enter text: ");
 	string searchingText = Console.ReadLine() ?? "";
+	Console.Write("\n");
 
 	if (!Directory.Exists(folder))
 	{
@@ -24,6 +25,9 @@ while (true)
 	//var regex = new Regex("text *= *\"(.+?)\"");
 	var regex = new Regex(searchingText);
 	int matchesCount = 0;
+
+	Console.WriteLine($"{files.Length} files found.\n");
+
 	foreach (string file in files)
 	{
 		string content = File.ReadAllText(file);
@@ -39,7 +43,7 @@ while (true)
 	}
 
 	if (matchesCount == 0)
-		Console.WriteLine("Found no matches\n");
+		Console.WriteLine("No matches\n");
 	else
 		Console.WriteLine("============= End ==============\n");
 }
@@ -57,5 +61,3 @@ string[] GetTscnFilePaths (string folder)
 
 	return files.ToArray();
 }
-
-Console.ReadLine();

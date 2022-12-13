@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_PROJETOS_\\_TEST_\\GetTextInGodotScenes\\GetTextInGodotScenes\\GetTextInGodotScenes.csproj",
+      "projectUniqueName": "C:\\_PROJETOS_\\godot-utilities\\GetTextInGodotScenes\\GetTextInGodotScenes\\GetTextInGodotScenes.csproj",
       "projectName": "GetTextInGodotScenes",
-      "projectPath": "C:\\_PROJETOS_\\_TEST_\\GetTextInGodotScenes\\GetTextInGodotScenes\\GetTextInGodotScenes.csproj",
+      "projectPath": "C:\\_PROJETOS_\\godot-utilities\\GetTextInGodotScenes\\GetTextInGodotScenes\\GetTextInGodotScenes.csproj",
       "packagesPath": "C:\\Users\\alexc\\.nuget\\packages\\",
-      "outputPath": "C:\\_PROJETOS_\\_TEST_\\GetTextInGodotScenes\\GetTextInGodotScenes\\obj\\",
+      "outputPath": "C:\\_PROJETOS_\\godot-utilities\\GetTextInGodotScenes\\GetTextInGodotScenes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexc\\AppData\\Roaming\\NuGet\\NuGet.Config",

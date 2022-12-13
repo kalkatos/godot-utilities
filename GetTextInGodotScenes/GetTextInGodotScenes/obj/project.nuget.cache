@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ge1UG5NiwCq2Svt4G2dmfs8Jrt4SSbA6FYUaObx5Z3CMMV9VZdO9gMW1J5VanIP+w0uHMSkWwhmVzTYmwtwLzQ==",
+  "dgSpecHash": "6z8ICUGmlh9UrKuzGEf7JABi6oOuNgUoIAfRs9O2ymyD6yliFeHpMSKwLSP/K9DOLa42ji+cA4LqtD2ncq2Srg==",
   "success": true,
-  "projectFilePath": "C:\\_PROJETOS_\\_TEST_\\GetTextInGodotScenes\\GetTextInGodotScenes\\GetTextInGodotScenes.csproj",
+  "projectFilePath": "C:\\_PROJETOS_\\godot-utilities\\GetTextInGodotScenes\\GetTextInGodotScenes\\GetTextInGodotScenes.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
