@@ -5,47 +5,56 @@ using System.Text.RegularExpressions;
 
 while (true)
 {
-	Console.Write("Enter folder: ");
-	string folder = Console.ReadLine() ?? "";
-	Console.Write("Enter text: ");
-	string searchingText = Console.ReadLine() ?? "";
-	Console.Write("\n");
-
-	if (!Directory.Exists(folder))
+	string folder = "";
+	while (string.IsNullOrEmpty(folder))
 	{
-		Console.WriteLine("Folder does not exist.");
-		return;
+		Console.Write("Enter folder: ");
+		string folderRead = Console.ReadLine() ?? "";
+
+		if (Directory.Exists(folderRead))
+			folder = folderRead;
+		else
+			Console.WriteLine("Folder does not exist.\n");
 	}
 
-	List<string> labelsAndButtons = new List<string>();
 	string[] files = GetTscnFilePaths(folder);
-	//var regex = new Regex("\\[node name = \"(.+?)\".*?text *= *\"(.*?)\"", RegexOptions.Multiline);
-	//var regex = new Regex("\\[node name = \"(.+?)\"", RegexOptions.Multiline);
-	//var regex = new Regex("\\[node name=\"(.+?)\" type=\"(Label|Button)\"[\\s\\S]*?text *= *\"(.+?)\"");
-	//var regex = new Regex("text *= *\"(.+?)\"");
-	var regex = new Regex(searchingText);
-	int matchesCount = 0;
+	Console.WriteLine($"{files.Length} *.tscn files found.\n");
 
-	Console.WriteLine($"{files.Length} files found.\n");
-
-	foreach (string file in files)
+	string searchingText = "";
+	while (searchingText != "§")
 	{
-		string content = File.ReadAllText(file);
-		MatchCollection matches = regex.Matches(content);
-		if (matches.Count > 0)
-		{
-			matchesCount++;
-			Console.WriteLine(file.Replace(folder + "\\", ""));
-			for (int i = 0; i < matches.Count; i++)
-				Console.WriteLine(matches[i].Groups[0]);
-			Console.WriteLine("");
-		}
-	}
+		Console.Write("Enter regex search text: ");
+		searchingText = Console.ReadLine() ?? "";
+		Console.Write("\n");
 
-	if (matchesCount == 0)
-		Console.WriteLine("No matches\n");
-	else
-		Console.WriteLine("============= End ==============\n");
+		List<string> labelsAndButtons = new List<string>();
+		//var regex = new Regex("\\[node name = \"(.+?)\".*?text *= *\"(.*?)\"", RegexOptions.Multiline);
+		//var regex = new Regex("\\[node name = \"(.+?)\"", RegexOptions.Multiline);
+		//var regex = new Regex("\\[node name=\"(.+?)\" type=\"(Label|Button)\"[\\s\\S]*?text *= *\"(.+?)\"");
+		//var regex = new Regex("text *= *\"(.+?)\"");
+		var regex = new Regex(searchingText);
+		int matchesCount = 0;
+
+		foreach (string file in files)
+		{
+			string content = File.ReadAllText(file);
+			MatchCollection matches = regex.Matches(content);
+			if (matches.Count > 0)
+			{
+				matchesCount++;
+				Console.WriteLine(file.Replace(folder + "\\", ""));
+				for (int i = 0; i < matches.Count; i++)
+					Console.WriteLine(matches[i].Groups[0]);
+				Console.WriteLine("");
+			}
+		}
+
+		if (matchesCount == 0)
+			Console.WriteLine("--- No matches\n");
+		else
+			Console.WriteLine("--- \n");
+	}
+	Console.WriteLine("\n============= End ==============\n\n");
 }
 
 string[] GetTscnFilePaths (string folder)
